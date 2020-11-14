@@ -3,10 +3,10 @@ package com.dimeno.log.tracker.entity
 import java.io.Serializable
 
 /**
- * log entity
+ * trace entity
  * Created by wangzhen on 2020/11/13.
  */
-class LogEntity : Serializable {
+class TraceEntity : Serializable {
     var date: String? = null
     var widgets: ArrayList<WidgetEntity>? = null
     var traces: ArrayList<String>? = null

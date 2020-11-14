@@ -20,7 +20,13 @@ class MainActivity : AppCompatActivity() {
     fun onClick(view: View) {
         when (view.id) {
             R.id.btn_hello -> {
-                Log.e("TAG", "-> onClick")
+                Log.e("TAG", "-> Hello World!")
+            }
+            R.id.btn_test -> {
+                Log.e("TAG", "-> test")
+            }
+            R.id.btn_crash -> {
+                throw NullPointerException("exception for test")
             }
         }
     }
