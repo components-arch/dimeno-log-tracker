@@ -55,7 +55,7 @@ class LogWriter {
             }
 
             val builder = StringBuilder().apply {
-                appendLine("####################")
+                appendLine("#")
                 appendLine(Gson().toJson(entity))
             }
             randomAccessFile.write(builder.toString().toByteArray())
@@ -120,7 +120,7 @@ class LogWriter {
             }
 
             val builder = StringBuilder().apply {
-                appendLine("####################")
+                appendLine("#")
                 appendLine(Gson().toJson(entity))
             }
             randomAccessFile.write(builder.toString().toByteArray())
