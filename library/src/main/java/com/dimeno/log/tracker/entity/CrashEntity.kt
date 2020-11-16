@@ -20,6 +20,7 @@ class CrashEntity : Serializable {
     }
 
     class ExceptionEntity : Serializable {
+        var exception: String? = null
         var message: String? = null
         var stackTrace: ArrayList<String>? = null
         var details: String? = null

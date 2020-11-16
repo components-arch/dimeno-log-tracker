@@ -12,6 +12,7 @@ import org.aspectj.lang.ProceedingJoinPoint
 import java.io.PrintWriter
 import java.io.RandomAccessFile
 import java.io.StringWriter
+import java.lang.reflect.InvocationTargetException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -72,6 +73,11 @@ class LogWriter {
                     priority = t.priority
                 }
                 exception = CrashEntity.ExceptionEntity().apply {
+                    if (e.cause is InvocationTargetException) {
+                        exception =
+                            (e.cause as InvocationTargetException).targetException?.javaClass?.name
+                    }
+
                     message = e.message
 
                     val traces = arrayListOf<String>()
