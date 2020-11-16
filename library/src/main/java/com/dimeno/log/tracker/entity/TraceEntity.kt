@@ -8,6 +8,7 @@ import java.io.Serializable
  */
 class TraceEntity : Serializable {
     var date: String? = null
+    var className: String? = null
     var widgets: ArrayList<WidgetEntity>? = null
     var traces: ArrayList<String>? = null
 

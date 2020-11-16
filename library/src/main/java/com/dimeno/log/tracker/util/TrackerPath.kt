@@ -4,10 +4,10 @@ import com.dimeno.log.tracker.Tracker
 import java.io.File
 
 /**
- * path utils
+ * tracker path utils
  * Created by wangzhen on 2020/11/13.
  */
-class PathManager {
+class TrackerPath {
     companion object {
         fun getTraceFile(): File {
             return File(Tracker.sContext!!.getExternalFilesDir("tracks"), "track.log")
