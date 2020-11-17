@@ -9,7 +9,7 @@ import com.dimeno.log.tracker.exception.TrackerExceptionHandler
  */
 class Tracker {
     companion object {
-        var sContext: Context? = null
+        private var sContext: Context? = null
         fun install(context: Context) {
             install(context, false)
         }
@@ -19,6 +19,13 @@ class Tracker {
             if (registerExceptionHandler) {
                 Thread.setDefaultUncaughtExceptionHandler(TrackerExceptionHandler())
             }
+        }
+
+        fun getContext(): Context? {
+            if (sContext == null) {
+                throw IllegalStateException("Tracker requires initialization, please call `Tracker.install(Context)`")
+            }
+            return sContext
         }
     }
 }

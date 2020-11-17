@@ -10,11 +10,11 @@ import java.io.File
 class TrackerPath {
     companion object {
         fun getTraceFile(): File {
-            return File(Tracker.sContext!!.getExternalFilesDir("tracks"), "track.log")
+            return File(Tracker.getContext()!!.getExternalFilesDir("tracks"), "track.log")
         }
 
         fun getCrashFile(): File {
-            return File(Tracker.sContext!!.getExternalFilesDir("crash"), "crash.log")
+            return File(Tracker.getContext()!!.getExternalFilesDir("crash"), "crash.log")
         }
     }
 }
